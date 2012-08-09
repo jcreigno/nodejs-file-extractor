@@ -29,6 +29,17 @@ Using multiple patterns :
         .matches(/regex3/, cb3).start();
 ```  
 
+Using watch mode :
+
+```javascript
+    var extractor = require('file-extractor');
+
+    extractor()
+        .matches(/regex1/, cb1)
+        .matches(/regex2/, cb2)
+        .matches(/regex3/, cb3).start('sample.txt');
+```  
+
 Using an accumulator :
 
 ```javascript
