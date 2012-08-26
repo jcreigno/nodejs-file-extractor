@@ -72,7 +72,7 @@ Accumulator may be used to share data across callbacks.
 
 .matches(regex, callback)
 --------------------------
-Register a new matching pattern and corresponding callback. Each match is notified using call back. 
+Register a new matching pattern and corresponding callback. Each match is notified using callback. 
 
 * First callback parameter is regex.exec result.
 * Second parameter is the accumulator object.
@@ -85,7 +85,7 @@ Start scanning stream and notify callbacks.
 
 .watch(filename)
 ------------------------------------
-Start watching file `filename` for modification. Each new maching lines will trigger matching callbacks.
+Start watching file `filename` for modification. Each new lines will trigger matching callbacks.
 
 Events
 ======
