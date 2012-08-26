@@ -37,7 +37,7 @@ Using watch mode :
     extractor()
         .matches(/regex1/, cb1)
         .matches(/regex2/, cb2)
-        .matches(/regex3/, cb3).start('sample.txt');
+        .matches(/regex3/, cb3).watch('sample.txt');
 ```  
 
 Using an accumulator :
