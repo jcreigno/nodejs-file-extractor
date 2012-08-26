@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/jcreigno/nodejs-file-extractor.png)](http://travis-ci.org/jcreigno/nodejs-file-extractor)
 file-extractor
 =========
 
