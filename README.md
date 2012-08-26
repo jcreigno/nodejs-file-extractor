@@ -67,6 +67,7 @@ API
 extractor(ac={})
 ----------------
 The constructor function creates a new `extractor`. Optionnaly pass an accumulator as parameter.
+Accumulator may be used to share data across callbacks.
 
 
 .matches(regex, callback)
@@ -81,6 +82,10 @@ Return value is `this` to enable method chaining.
 .start(readableStream=process.stdin)
 ------------------------------------
 Start scanning stream and notify callbacks.
+
+.watch(filename)
+------------------------------------
+Start watching file `filename` for modification. Each new maching lines will trigger matching callbacks.
 
 Events
 ======
