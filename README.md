@@ -48,10 +48,10 @@ Using an accumulator :
         fs = require('fs');
 
     var s = fs.createReadStream(__dirname + '/sample.csv',{});
-    extractor({'count': 0}).matches(/;(?!(?:[^",]|[^"],[^"])+")/,function(m,vars){
+    extractor({'count': 0}).matches(/;(?!(?:[^",]|[^"],[^"])+")/,function(m, vars){
         console.log(m);
         vars.count ++;
-    }).on('end',function(vars){
+    }).on('end', function(vars){
         console.log(vars.count + ' matches found.');
     }).start(s);
 ```  
@@ -81,7 +81,7 @@ Return value is `this` to enable method chaining.
 
 .start(readableStream=process.stdin)
 ------------------------------------
-Start scanning stream and notify callbacks.
+Start scanning stream and notify callbacks. If `readableStream` is empty use standard input `process.stdin`.
 
 .watch(filename)
 ------------------------------------
