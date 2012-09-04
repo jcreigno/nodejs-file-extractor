@@ -87,10 +87,14 @@ Start scanning stream and notify callbacks. If `readableStream` is empty use sta
 ------------------------------------
 Start watching file `filename` for modification. Each new lines will trigger matching callbacks.
 
+.close()
+------------------------------------
+Clean up method. Remove any watcher on file.
+
 Events
 ======
 
 'end'
 -----
-Sent when end of stream is reached. The current accumulator is given as first parameter to the event listener.
+Sent when end of stream is reached. The current accumulator is given as first parameter to the event listener. Only emited in no-watch mode (`start` method).
 
