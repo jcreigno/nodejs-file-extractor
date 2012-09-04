@@ -13,7 +13,7 @@ var objCreation = {
     'has a "matches" method' : assertMethod('matches'),
     'has a "start" method' : assertMethod('start'),
     'has a "watch" method' : assertMethod('watch'),
-    'has a "unwatch" method' : assertMethod('unwatch')
+    'has a "close" method' : assertMethod('close')
 };
 
 vows.describe('Extractor').addBatch({
