@@ -2,7 +2,7 @@
     "name": "file-extractor",
     "description": "Extract data from text files or log files using regular expressions.",
     "keywords" : ["extract", "regexp", "logs", "text"],
-    "version": "0.4.0",
+    "version": "0.5.0",
     "author": {
         "name" : "jerome creignou",
         "url" : "https://github.com/jcreigno/nodejs-file-extractor"
@@ -12,7 +12,9 @@
         "url" : "git://github.com/jcreigno/nodejs-file-extractor.git"
     },
     "dependencies": {
-        "carrier": "~0.1.7"
+        "carrier": "~0.1.7",
+        "walkdir": "~0.0.5",
+        "minimatch" : "~0.2.9"
     },
     "main": "./lib/main.js",
     "directories": {
