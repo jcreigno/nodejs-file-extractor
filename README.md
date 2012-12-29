@@ -30,17 +30,6 @@ Using multiple patterns :
         .matches(/regex3/, cb3).start();
 ```  
 
-Using watch mode :
-
-```javascript
-    var extractor = require('file-extractor');
-
-    extractor()
-        .matches(/regex1/, cb1)
-        .matches(/regex2/, cb2)
-        .matches(/regex3/, cb3).watch('sample.txt');
-```  
-
 Using an accumulator :
 
 ```javascript
@@ -55,6 +44,37 @@ Using an accumulator :
         console.log(vars.count + ' matches found.');
     }).start(s);
 ```  
+
+Using watch mode :
+
+```javascript
+    var extractor = require('file-extractor');
+
+    extractor()
+        .matches(/regex1/, cb1)
+        .matches(/regex2/, cb2)
+        .matches(/regex3/, cb3).watch('sample.txt');
+```
+This mode supports wildcards in file names :
+```javascript
+    var extractor = require('file-extractor');
+
+    extractor()
+        .matches(/regex1/, cb1)
+        .matches(/regex2/, cb2)
+        .matches(/regex3/, cb3).watch('/var/log/*.log');
+```
+
+In this case an additionnal parameter is passed to the callback function to indicate which file triggered the pattern.
+```javascript
+    var extractor = require('file-extractor');
+
+    extractor()
+        .matches(/regex3/, function(match, vars, file){
+          console.log('pattern found in : ' + file);
+        }).watch('/var/log/*.log');
+```
+
 
 installation
 ------------
@@ -76,6 +96,7 @@ Register a new matching pattern and corresponding callback. Each match is notifi
 
 * First callback parameter is regex.exec result.
 * Second parameter is the accumulator object.
+* optionnaly the third parameter is file name (in watch mode).
 
 Return value is `this` to enable method chaining.
 
@@ -85,7 +106,7 @@ Start scanning stream and notify callbacks. If `readableStream` is empty use sta
 
 .watch(filename)
 ------------------------------------
-Start watching file `filename` for modification. Each new lines will trigger matching callbacks.
+Start watching file `filename` for modification, may contains wildcard (see `minimatch` by @izs). Each new lines will trigger matching callbacks.
 
 .close()
 ------------------------------------
