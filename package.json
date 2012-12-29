@@ -8,7 +8,7 @@
         "url" : "https://github.com/jcreigno/nodejs-file-extractor"
     },
     "repository" : {
-        "type" : "git", 
+        "type" : "git",
         "url" : "git://github.com/jcreigno/nodejs-file-extractor.git"
     },
     "dependencies": {
