@@ -119,3 +119,7 @@ Events
 -----
 Sent when end of stream is reached. The current accumulator is given as first parameter to the event listener. Only emited in no-watch mode (`start` method).
 
+'error'
+-----
+Sent when watching files with wildcards (`*`) and an error occurred when selecting files. Only emited in watch mode (`watch` method).
+
