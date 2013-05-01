@@ -1,5 +1,5 @@
 
-file-extractor [![build status](https://secure.travis-ci.org/jcreigno/nodejs-file-extractor.png)](http://travis-ci.org/jcreigno/nodejs-file-extractor)
+file-extractor [![build status](https://secure.travis-ci.org/jcreigno/nodejs-file-extractor.png)](http://travis-ci.org/jcreigno/nodejs-file-extractor) [![NPM version](https://badge.fury.io/js/file-extractor.png)](https://npmjs.org/package/file-extractor)
 =========
 
 > Extract data from text files or log files using regular expressions.
