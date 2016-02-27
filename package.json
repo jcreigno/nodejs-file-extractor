@@ -8,6 +8,9 @@
     "text"
   ],
   "version": "0.6.1",
+  "scripts": {
+    "test": "vows --spec ./test/test-*"
+  },
   "author": {
     "name": "jerome creignou",
     "url": "https://github.com/jcreigno/nodejs-file-extractor"
@@ -24,13 +27,7 @@
   "directories": {
     "lib": "./lib"
   },
-  "engines": {
-    "node": ">=0.3.0"
-  },
   "devDependencies": {
-    "vows": "~0.6.2"
-  },
-  "scripts": {
-    "test": "vows --spec ./test/test-*"
+    "vows": "^0.8.1"
   }
 }
