@@ -99,10 +99,12 @@ installation
 API
 ===
 
-extractor(ac={})
+extractor(ac={}, options={})
 ----------------
 The constructor function creates a new `extractor`. Optionnaly pass an accumulator as parameter.
 Accumulator may be used to share data across callbacks.
+Options is an object with the folowing attributes :
+* successive: [true|false] to enable/disable multiple match on same line.
 
 
 .matches(regex, callback)
