@@ -40,5 +40,28 @@ vows.describe('Extractor').addBatch({
                 }
             }
         }
+    },
+    'when creating an Extractor object with an accumulator and successive,':{
+        topic: extractor({count:0 , lines : 0} , {successive : true}),
+        'we get notified':{
+            topic: function(ext){
+                var s = fs.createReadStream(__dirname + '/sample.csv',{});
+                ext.matches(/;(?!(?:[^",]|[^"],[^"])+")/g,function(m,vars,file,firstMatch){
+                    vars.count ++;
+                    if(firstMatch){
+                        vars.lines++;
+                    }
+                });
+                return ext.start(s);
+            },
+            on:{
+                "end" : {
+                    "we have a 25 lines and 176 matches" : function(e){
+                        assert.equal(e.lines, 25);
+                        assert.equal(e.count, 200);
+                    }
+                }
+            }
+        }
     }
 }).export(module);

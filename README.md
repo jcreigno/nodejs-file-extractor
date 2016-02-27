@@ -45,6 +45,21 @@ Using an accumulator :
     }).start(s);
 ```  
 
+Using an successive match :
+
+```javascript
+    var extractor = require('file-extractor'),
+        fs = require('fs');
+
+    var s = fs.createReadStream(__dirname + '/sample.csv',{});
+    extractor({'count': 0}).matches(/;(?!(?:[^",]|[^"],[^"])+")/g,function(m, vars, files, firstMatch){
+        console.log(m);
+        vars.count ++;
+    }).on('end', function(vars){
+        console.log(vars.count + ' matches found.');
+    }).start(s);
+```  
+
 Using watch mode :
 
 ```javascript
